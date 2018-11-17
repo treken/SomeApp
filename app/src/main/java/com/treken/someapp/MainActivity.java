@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
         moviesRepository = MoviesRepository.getInstance();
 
         moviesList = findViewById(R.id.movies_list);
-        moviesList.setLayoutManager(new LinearLayoutManager(this));
+        moviesList.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
 
         moviesRepository.getMovies(new OnGetMoviesCallback() {
             @Override
