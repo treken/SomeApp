@@ -8,7 +8,7 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class MoviesRepository {
+class MoviesRepository {
 
     private static final String BASE_URL = "https://api.themoviedb.org/3/";
     private static final String LANGUAGE = "en-US";
@@ -21,7 +21,7 @@ public class MoviesRepository {
         this.api = api;
     }
 
-    public static MoviesRepository getInstance() {
+    static MoviesRepository getInstance() {
         if (repository == null) {
             Retrofit retrofit = new Retrofit.Builder()
                     .baseUrl(BASE_URL)
@@ -34,7 +34,7 @@ public class MoviesRepository {
         return repository;
     }
 
-    public void getMovies(final OnGetMoviesCallback callback) {
+    void getMovies(final OnGetMoviesCallback callback) {
         api.getPopularMovies("<YOUR_API_KEY>", LANGUAGE, 1) // You must replace <YOUR_API_KEY> with your actual api key
                 .enqueue(new Callback<MoviesResponse>() {
                     @Override
@@ -52,7 +52,7 @@ public class MoviesRepository {
                     }
 
                     @Override
-                    public void onFailure(Call<MoviesResponse> call, Throwable t) {
+                    public void onFailure(@NonNull Call<MoviesResponse> call, @NonNull Throwable t) {
                         callback.onError();
                     }
                 });
