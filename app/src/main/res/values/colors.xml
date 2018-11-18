@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#008577</color>
-    <color name="colorPrimaryDark">#00574B</color>
-    <color name="colorAccent">#D81B60</color>
+    <color name="colorPrimary">#8147ff</color>
+    <color name="colorPrimaryDark">#303030</color>
+    <color name="colorAccent">#303030</color>
+
+    <!-- main content background -->
+    <color name="main_bg_color">#303030</color>
+
+    <!-- toolbar text color -->
+    <color name="toolbar_text_color">#fff</color>
+    <!-- toolbar overflow menu color (3 dots) -->
+    <color name="menu_color">#fff</color>
 </resources>
